@@ -71,6 +71,16 @@ conda install -c bioconda bcftools
 conda install -c bioconda htslib #bgzip tabix
 # 新しい環境だとbcftoolsでdydl Library not foundとなってしまった
 
+# miniconda (conda-forge, bioconda)が良さそう
+conda create xxx 
+conda activate xxx
+conda --config add-channels bioconda conda-forge
+conda install -c bioconda samtools bedtools vt snpeff snpsift bcftools 
+	
+	# snpseff snpsiftはシンボリックリンク作成する
+	ln -s bin/SnpEff snpeff
+	ln -s pkgs/snpsift/bin/SnpSift snpsift
+
 # その他ツール
 brew install gnu-sed #macの標準sedはBSD版なので少し仕様が異なる gsed便利
 # vardictでRが使えないならRをインストール
